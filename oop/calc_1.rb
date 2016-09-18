@@ -13,7 +13,6 @@
 # below. You must also write the driver code to test your classes.
 
 class SimpleCalculator
-
   def add(first_number, second_number)
     first_number + second_number
   end
@@ -29,32 +28,52 @@ class SimpleCalculator
   def divide(first_number, second_number)
     first_number / second_number
   end
-
 end
 
-class FancyCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
-
+class FancyCalculator < SimpleCalculator
   def square_root(number)
     Math.sqrt(number)
   end
-
 end
 
 # Write your own driver code below:
+puts "TESTING calc_1..."
+puts
 
+calculator = FancyCalculator.new
+
+result = calculator.add(5, 2)
+
+puts "Your method returned:"
+puts result
+puts
+
+if result == 7
+  puts "PASS!"
+else
+  puts "F"
+end
+
+result = calculator.multiply(5, 2)
+
+puts "Your method returned:"
+puts result
+puts
+
+if result == 10
+  puts "PASS!"
+else
+  puts "F"
+end
+
+result = calculator.square_root(25)
+
+puts "Your method returned:"
+puts result
+puts
+
+if result == 5.0
+  puts "PASS!"
+else
+  puts "F"
+end
